@@ -1,0 +1,13 @@
+[
+    {"name": "Pop Music", "channels": [
+        {"id": "antennebayern", "name": "Antenne Bayern", "url": "http://mp3channels.webradio.antenne.de:80/antenne"},
+        {"id": "numberonefm", "name": "Number One FM", "url": "http://31.210.157.109/rto/numberonefm/icecast.audio"}
+    ]},
+    {"name": "Other", "channels": [
+        {"id": "theradiocc", "name": "TheRadio.CC", "url": "http://stream.theradio.cc:8000/trcc-stream.opus"}
+    ]},
+    {"name": "Electronic", "channels": [
+        {"id": "somafmgroovesalad", "name": "SomaFM - Groove Salad", "url": "http://ice1.somafm.com/groovesalad-128-mp3"},
+        {"id": "somafmspacestation", "name": "SomaFM - Space Station", "url": "http://ice1.somafm.com/spacestation-128-mp3"}
+    ]}
+]

@@ -1,0 +1,32 @@
+Uri: https://coffee.corporomalala.com/
+File Name: C:\Downloaded Web Sites\coffee.corporomalala.com\index-1.htm
+Content Type: text/html
+
+Uri: https://coffee.corporomalala.com/assets/stylesheets/coffee-convos.css
+File Name: C:\Downloaded Web Sites\coffee.corporomalala.com\assets\stylesheets\coffee-convos-1.css
+Content Type: text/css
+
+Uri: https://coffee.corporomalala.com/manifest.json
+File Name: C:\Downloaded Web Sites\coffee.corporomalala.com\manifest-1.json
+Content Type: application/json
+
+Uri: https://coffee.corporomalala.com/assets/images/profile-image-right-for-coffeeconvos-dot-something-dot-com.jpg
+File Name: C:\Downloaded Web Sites\coffee.corporomalala.com\assets\images\profile-image-right-for-coffeeconvos-dot-something-dot-com-1.jpg
+Content Type: image/jpeg
+
+Uri: https://coffee.corporomalala.com/assets/scripts/coffee-convos.js
+File Name: C:\Downloaded Web Sites\coffee.corporomalala.com\assets\scripts\coffee-convos-1.js
+Content Type: application/javascript
+
+Uri: https://coffee.corporomalala.com/assets/fonts/Hobo-Std/HoboStd.otf
+File Name: C:\Downloaded Web Sites\coffee.corporomalala.com\assets\fonts\Hobo-Std\HoboStd.otf-1.odft
+Content Type: application/vnd.oasis.opendocument.formula-template
+
+Uri: https://coffee.corporomalala.com/assets/images/profile-image-left-for-coffeeconvos-dot-something-dot-com.jpg
+File Name: C:\Downloaded Web Sites\coffee.corporomalala.com\assets\images\profile-image-left-for-coffeeconvos-dot-something-dot-com-1.jpg
+Content Type: image/jpeg
+
+Uri: https://coffee.corporomalala.com/assets/images/red-trees-background-for-coffeeconvos-dot-something-dot-com.jpg
+File Name: C:\Downloaded Web Sites\coffee.corporomalala.com\assets\images\red-trees-background-for-coffeeconvos-dot-something-dot-com-1.jpg
+Content Type: image/jpeg
+
