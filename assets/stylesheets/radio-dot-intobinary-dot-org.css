@@ -279,7 +279,7 @@ body {
 
 .app.is-offline .u-audiogram-canvas,
 .app.is-offline .app-content-warning { opacity: .5; }
-.app-content-warning.is-nowPlaying,
+.app.is-offline .app-content-warning.is-nowPlaying,
 .app.is-offline .app-content-warning.is-visible { opacity: 1; }
 
 /*
