@@ -11,8 +11,13 @@ window.onload = function() {
 		var fileTag = document.querySelector("#thefile");
 		// var audio = document.getElementById("audio");
 
+		var marqueeTag = document.querySelector(".app-content-warning.is-bottom"),
+			marqueeWrapTag = document.querySelector(".js-marquee-wrap");
+		
 //		var channelOne = "http://ice1.somafm.com/spacestation-128-mp3";
 //		var channelOne = "assets/media/Over_the_Horizon.mp3";
+
+		var nowPlaying = "", warningText = "";
 	/*** END OBJECTS AND VARIABLES ***/
 	
 	/*** SETUP ***/
@@ -21,36 +26,76 @@ window.onload = function() {
 //		radio_playStation(channelOne);
 		radio_loadChannels();
 	/*** END SETUP ***/
+	
+	/*** ACTIONS ***/
+	document.querySelector(".js-app-switch").onclick = function() {
+		audioTag.src = undefined;
+		/*
+		audioTag.pause();
+		audioTag.currentTime = 0;
+		*/
+		
+		nowPlaying = "";
+		html_marqueeText(warningText);
+		marqueeTag.classList.remove("is-nowPlaying");
+		
+		this.classList.add("is-hidden");
+	}
+	/*** END ACTIONS ***/
   
 	/*** EVENTS ***/
 		window.addEventListener("offline", function(event) { checkNetwork(); });
 		window.addEventListener("online", function(event) { checkNetwork(); });
 
+		/*
 		fileTag.onchange = function() {
 			var files = this.files;
 			radio_playMP3(URL.createObjectURL(files[0]));
 		};
+		*/
 	/*** END EVENTS ***/
 
 	/*** FUNCTIONS ***/
-		function appOnline() { appTag.classList.add("is-online"); }
-		function appOffline() { appTag.classList.add("is-offline"); } 
+		function appOnline() {
+			warningText = "You are online";
+			appTag.classList.add("is-online");
+		}
+		function appOffline() {
+			warningText = "You are offline";
+			appTag.classList.add("is-offline");
+		}
 
 		function checkNetwork() {
 			appTag.classList.remove("is-online");
 			appTag.classList.remove("is-offline");
 			
 			navigator.onLine ? appOnline() : appOffline();
+			html_marqueeText(warningText);
 
-			document.querySelector(".app-content-warning.is-top").classList.add("is-visible");
-			document.querySelector(".app-content-warning.is-bottom").classList.add("is-visible");	
+//			document.querySelector(".app-content-warning.is-top").classList.add("is-visible");
+			marqueeTag.classList.add("is-visible");
 			setTimeout(function() {
-				document.querySelector(".app-content-warning.is-top").classList.remove("is-visible");
-				document.querySelector(".app-content-warning.is-bottom").classList.remove("is-visible");
+//				document.querySelector(".app-content-warning.is-top").classList.remove("is-visible");
+				marqueeTag.classList.remove("is-visible");
+
+				if(nowPlaying != "") {
+					html_marqueeText(nowPlaying);
+					marqueeTag.classList.add("is-nowPlaying");
+				}
 			}, 5000);
+		}
+		
+		function html_marqueeText(text) {
+			var marqueeString = '<span class="app-content-warning-text">'+ text +'</span><span class="app-content-warning-text">'+ text +'</span><span class="app-content-warning-text">'+ text +'</span><span class="app-content-warning-text">'+ text +'</span><span class="app-content-warning-text">'+ text +'</span><span class="app-content-warning-text">'+ text +'</span><span class="app-content-warning-text">'+ text +'</span><span class="app-content-warning-text">'+ text +'</span><span class="app-content-warning-text">'+ text +'</span><span class="app-content-warning-text">'+ text +'</span>';
+//			alert(marqueeString);
+
+			marqueeWrapTag.innerHTML = marqueeString;
 		}
 
 	  function radio_playMP3(address) {
+		document.querySelector(".js-app-switch").classList.remove("is-hidden");
+		html_marqueeText(nowPlaying);
+								
 		audioTag.src = address;
 		
 	//	audioTag.resume();
@@ -123,23 +168,22 @@ window.onload = function() {
 					for (var i=0;i<station_data.length;i++) {
 						var category = station_data[i];
 						
-						
 						var categoryID = "category" + (i+1);
 						var categoryIDsub = "category" + (i+1) + "SubUl";
 						
 						var li = document.createElement("li");
 //						li.textContent = category.name;
-						li.setAttribute("class", "category app-content-menu-list-item");
+						li.setAttribute("class", "category app-content-channels-list-item");
 						li.setAttribute("id", categoryID);
 						document.getElementById("channelList").appendChild(li);
 						
 						var h4 = document.createElement("h4");
 						h4.textContent = category.name;
-						h4.setAttribute("class", "app-content-menu-category");
+						h4.setAttribute("class", "app-content-channels-category");
 						document.getElementById(categoryID).appendChild(h4);
 
 						var subUL = document.createElement("ul");
-						subUL.setAttribute("class", "app-content-menu-sublist");
+						subUL.setAttribute("class", "app-content-channels-sublist");
 						subUL.setAttribute("id", categoryIDsub);
 						document.getElementById(categoryID).appendChild(subUL);
 
@@ -148,16 +192,22 @@ window.onload = function() {
 							var stationID = "category" + i + "station" + i1;
 							
 							var li = document.createElement("li");
-							li.setAttribute("class", "station app-content-menu-sublist-item is-station" + countChannels);
+							li.setAttribute("class", "station app-content-channels-sublist-item is-station" + countChannels);
 							li.setAttribute("id", stationID);
 //							li.textContent = category.channels[i1].name;
 							document.getElementById(categoryIDsub).appendChild(li);
 							
 							var img = document.createElement("img");
 							img.src = "assets/images/placeholder-1x1.png";
-							img.setAttribute("class", "app-content-menu-logo u-button is-"+ category.channels[i1].id);
+							img.setAttribute("class", "app-content-channels-logo u-button js-channel-button is-"+ category.channels[i1].id);
+							img.setAttribute("data-name", category.channels[i1].name);
 //							img.setAttribute("data-logo", "assets/images/logos/"+ category.channels[i1].id +".png");
 							(function (url){img.addEventListener("click", function() {
+								nowPlaying = this.getAttribute("data-name");
+//								navigator.onLine ? nowPlaying = this.getAttribute("data-name") : nowPlaying = "You are offline";
+
+								marqueeTag.classList.add("is-nowPlaying");
+								
 //								radio_playStation(url);
 								radio_playMP3(url);
 							}, false)}(category.channels[i1].url));
@@ -166,7 +216,7 @@ window.onload = function() {
 							var h5 = document.createElement("h5");
 //							h5.textContent = category.channels[i1].name;
 							h5.textContent = category.channels[i1].name;
-							h5.setAttribute("class", "app-content-menu-station");
+							h5.setAttribute("class", "app-content-channels-station");
 							document.getElementById(stationID).appendChild(h5);
 						}
 //						document.getElementById("channelList").appendChild(document.createElement("br"));

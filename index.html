@@ -13,8 +13,8 @@
 		<meta name="apple-mobile-touch-fullscreen" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="description" content="Wanna discuss Into Binary? Get Code Radio!">
-		<title>Code Radio?</title>
+		<meta name="description" content="Create a great environment to code with this radio. #IntoBinary">
+		<title>Code Radio -- Into Binary</title>
 		
 		<link rel="index" content="https://radio.intobinary.org">
 		<link rel="webmention" content="">
@@ -105,20 +105,74 @@
 
 	<body>
 		<div id="particles-js" class="js-particles"></div>
+		<input type="checkbox" id="chkbxForMenu" name="chkbxForMenu" />
+		
+		<input type="checkbox" id="chkbxForStation1" name="chkbxForStation1" checked />
+		<input type="checkbox" id="chkbxForStation2" name="chkbxForStation2" />
+		<input type="checkbox" id="chkbxForStation3" name="chkbxForStation3" />
+		<input type="checkbox" id="chkbxForStation4" name="chkbxForStation4" checked />
+		<input type="checkbox" id="chkbxForStation5" name="chkbxForStation5" checked />
+		<input type="checkbox" id="chkbxForStation6" name="chkbxForStation6" checked />
+		
+		<label for="chkbxForMenu" class="nav-button-open"><img src="assets/images/icon_category_green.png" /></label>
+		<nav class="nav"><div class="nav-wrap">
+			<figure class="nav-logo">
+				<img src="assets/images/green-logo-for-www-dot-book-appointment-dot-intobinary-dot-org.png" class="nav-logo-img" />
+			</figure>
+		
+			<div class="nav-channels"><ul class="nav-channels-list">
+				<li class="nav-channels-list-item">
+					<h3 class="nav-channels-category">Playlists</h3>
+					
+					<ul class="nav-channels-sublist">
+						<li class="nav-channels-sublist-item is-station1">
+							<label for="chkbxForStation1" class="nav-channels-station"><div class="nav-channels-station-checkbox"><span class="u-checkbox"><img src="assets/images/icon_check_green.png" /></span></div><h4 class="nav-channels-station-name">Will Smith's Quarantine Playlist</h4></label>
+						</li>
+					</ul>
+				</li>
+				<li class="nav-channels-list-item">
+					<h3 class="nav-channels-category">Channels</h3>
+					
+					<ul class="nav-channels-sublist">
+						<li class="nav-channels-sublist-item is-station2"><label for="chkbxForStation2" class="nav-channels-station"><div class="nav-channels-station-checkbox"><span class="u-checkbox"><img src="assets/images/icon_check_green.png" /></span></div><h4 class="nav-channels-station-name">Antenne Bayern</h4></label></li>
+						<li class="nav-channels-sublist-item is-station3"><label for="chkbxForStation3" class="nav-channels-station"><div class="nav-channels-station-checkbox"><span class="u-checkbox"><img src="assets/images/icon_check_green.png" /></span></div><h4 class="nav-channels-station-name">Number One FM</h4></label></li>
+						<li class="nav-channels-sublist-item is-station4"><label for="chkbxForStation4" class="nav-channels-station"><div class="nav-channels-station-checkbox"><span class="u-checkbox"><img src="assets/images/icon_check_green.png" /></span></div><h4 class="nav-channels-station-name">TheRadio.CC</h4></label></li>
+						<li class="nav-channels-sublist-item">
+							<h4 class="nav-channels-tier">SomaFM</h4>
+							
+							<ul class="nav-channels-tierlist">
+								<li class="nav-channels-tierlist-item is-station5"><label for="chkbxForStation5" class="nav-channels-station"><div class="nav-channels-station-checkbox"><span class="u-checkbox"><img src="assets/images/icon_check_green.png" /></span></div><h5 class="nav-channels-station-name">SomaFM - Groove Salad</h5></label></li>
+								<li class="nav-channels-tierlist-item is-station6"><label for="chkbxForStation6" class="nav-channels-station"><div class="nav-channels-station-checkbox"><span class="u-checkbox"><img src="assets/images/icon_check_green.png" /></span></div><h5 class="nav-channels-station-name"></span>SomaFM - Space Station</h5></label></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul></div>
+			
+			<label for="chkbxForMenu" class="nav-button-close"><img src="assets/images/icon_close_green.png" /></label>
+		</div></nav>
 		
 		<section class="app is-type-1">
 			<div class="app-header u-audiogram"><canvas id="canvas" class="app-header-audiogram u-audiogram-canvas"></canvas></div>
 			 
-			<div class="app-content"><div class="app-content-warning is-top"><div class="app-content-warning-wrap"><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span></div></div><div class="app-content-wrap">
+			<div class="app-content">
+				<div class="app-content-warning is-top"><div class="app-content-warning-wrap"><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span></div></div>
 			
+			<div class="app-content-wrap">
+			<span class="app-content-switch u-button js-app-switch is-hidden"><img src="assets/images/icon_close_green.png" /></span>
+			
+			<!--
 		  <input type="file" id="thefile" accept="audio/*" />
+		  -->
 			
 				<audio id="player" class="player app-content-audio" src="" crossorigin="anonymous" autoplay controls preload></audio>
 				
-				<div class="channels app-content-menu"><ul id="channelList" class="app-content-menu-list">
+				<div class="channels app-content-channels"><ul id="channelList" class="app-content-channels-list">
 				</ul></div>
 				
-			</div><div class="app-content-warning is-bottom"><div class="app-content-warning-wrap"><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span><span class="app-content-warning-text">You are offline</span></div></div></div>
+			</div>
+			
+				<div class="app-content-warning is-bottom js-marquee"><div class="app-content-warning-wrap js-marquee-wrap"></div></div></div>
 			
 			<div class="app-footer u-audiogram">
 			</div>
