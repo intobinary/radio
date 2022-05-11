@@ -279,7 +279,7 @@ body {
 
 .app.is-offline .u-audiogram-canvas,
 .app.is-offline .app-content-warning { opacity: .5; }
-.app.is-offline .app-content-warning.is-nowPlaying,
+.app-content-warning.is-nowPlaying,
 .app.is-offline .app-content-warning.is-visible { opacity: 1; }
 
 /*
@@ -289,7 +289,7 @@ body {
 */
 .app-content-warning .app-content-warning-text { visibility: hidden; }
 .app-content-warning.is-visible .app-content-warning-text,
-.app.is-offline .app-content-warning.is-nowPlaying .app-content-warning-text,
+.app-content-warning.is-nowPlaying .app-content-warning-text,
 .app.is-offline .app-content:hover .app-content-warning-text { visibility: visible; }
 /*** END INTERACTIVITY ***/
 
@@ -302,6 +302,9 @@ body {
 	.u-audiogram {
 		min-height: 50vh;
 	}
+	
+	.app-content-channels { text-align: left; }
+	.app-content-channels-station { text-align: center; }
 }
 @media screen and (min-width: 50em) {
 	html, body { font-size: 16px; }
