@@ -433,13 +433,13 @@ html, body {
 	/*** BETAs ***/
 
 	/*** TO DELETE ***/
-.app-content-channels::-webkit-scrollbar {
-	height: .5em !important;
-//	display: none !important;
-}
-.app-content-channels::-webkit-scrollbar-thumb {
-//	background: #03EA60 !important;
-	background: white !important;
-}
+.app-content-channels::-scrollbar { height: .5em !important; }
+.app-content-channels::-webkit-scrollbar { height: .5em !important; }
+.app-content-channels::-moz-scrollbar { height: .5em !important; }
+.app-content-channels::-o-scrollbar { height: .5em !important; }
+.app-content-channels::-scrollbar-thumb { background: white !important; }
+.app-content-channels::-webkit-scrollbar-thumb { background: white !important; }
+.app-content-channels::-moz-scrollbar-thumb { background: white !important; }
+.app-content-channels::-o-scrollbar-thumb { background: white !important; }
 	/*** TO DELETE ***/
 /*===END CUSTOM===*/
