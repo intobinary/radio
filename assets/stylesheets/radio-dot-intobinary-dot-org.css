@@ -278,7 +278,7 @@ body {
 
 .app.is-offline .u-audiogram-canvas,
 .app.is-offline .app-content-warning { opacity: .5; }
-.app-content-warning.is-nowPlaying,
+.app.is-offline .app-content-warning.is-nowPlaying,
 .app.is-offline .app-content-warning.is-visible { opacity: 1; }
 
 /*
@@ -435,5 +435,10 @@ body {
 	border-radius: .25em;
 	*/
 }
+<<<<<<< HEAD
 	/*** TO DELETE ***/
 /*===END CUSTOM===*/
+=======
+/*** TO DELETE ***/
+/*===END CUSTOM===*/
+>>>>>>> 19ff241e0ab39c5556924f11fcc5ff4c19394bdf
